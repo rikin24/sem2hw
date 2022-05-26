@@ -1,0 +1,3145 @@
+{
+	"info": {
+		"_postman_id": "61cb5dfd-67c8-449c-b859-0c04d3329ad6",
+		"name": "part1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET /api/convenors (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/convenors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"convenors"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /api/convenors (200)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/convenors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"convenors"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 00:46:32 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 3,\n        \"name\": \"Jose Rojas\",\n        \"position\": \"PROFESSOR\",\n        \"modules\": [\n            {\n                \"code\": \"CO2103\",\n                \"title\": \"Software Architecture\",\n                \"level\": 2,\n                \"optional\": false,\n                \"sessions\": [\n                    {\n                        \"id\": 1,\n                        \"topic\": \"REST APIs\",\n                        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n                        \"duration\": 2\n                    }\n                ]\n            }\n        ]\n    },\n    {\n        \"id\": 4,\n        \"name\": \"Kehinde Aruleba\",\n        \"position\": \"LECTURER\",\n        \"modules\": [\n            {\n                \"code\": \"CO2103\",\n                \"title\": \"Software Architecture\",\n                \"level\": 2,\n                \"optional\": false,\n                \"sessions\": [\n                    {\n                        \"id\": 1,\n                        \"topic\": \"REST APIs\",\n                        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n                        \"duration\": 2\n                    }\n                ]\n            },\n            {\n                \"code\": \"CO3095\",\n                \"title\": \"Software Quality\",\n                \"level\": 3,\n                \"optional\": true,\n                \"sessions\": [\n                    {\n                        \"id\": 2,\n                        \"topic\": \"Unit Testing\",\n                        \"datetime\": \"2022-02-28T14:00:00.000+00:00\",\n                        \"duration\": 2\n                    }\n                ]\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET /api/convenors (404)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/convenorss",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"convenorss"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /api/convenorss (404)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/convenorss",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"convenorss"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 00:52:09 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2022-05-05T00:52:09.452+00:00\",\n    \"status\": 404,\n    \"error\": \"Not Found\",\n    \"message\": \"No message available\",\n    \"path\": \"/api/convenorss\"\n}"
+				}
+			]
+		},
+		{
+			"name": "POST /api/convenors (201)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 5,\r\n    \"name\": \"James Hoey\",\r\n    \"position\": \"PROFESSOR\",\r\n    \"modules\": [\r\n        {\r\n            \"code\": \"CO2103\",\r\n            \"title\": \"Software Architecture\",\r\n            \"level\": 2,\r\n            \"optional\": false,\r\n            \"sessions\": [\r\n                {\r\n                    \"id\": 1,\r\n                    \"topic\": \"REST APIs\",\r\n                    \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n                    \"duration\": 2\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/convenors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"convenors"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST /api/convenors (201)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 5,\r\n    \"name\": \"James Hoey\",\r\n    \"position\": \"PROFESSOR\",\r\n    \"modules\": [\r\n        {\r\n            \"code\": \"CO2103\",\r\n            \"title\": \"Software Architecture\",\r\n            \"level\": 2,\r\n            \"optional\": false,\r\n            \"sessions\": [\r\n                {\r\n                    \"id\": 1,\r\n                    \"topic\": \"REST APIs\",\r\n                    \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n                    \"duration\": 2\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/convenors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"convenors"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Location",
+							"value": "http://localhost:8080/api/convenors/5"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 02:01:11 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "A new convenor has been created"
+				}
+			]
+		},
+		{
+			"name": "POST /api/convenors (409)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3,\r\n    \"name\": \"James Hoey\",\r\n    \"position\": \"PROFESSOR\",\r\n    \"modules\": [\r\n        {\r\n            \"code\": \"CO2103\",\r\n            \"title\": \"Software Architecture\",\r\n            \"level\": 2,\r\n            \"optional\": false,\r\n            \"sessions\": [\r\n                {\r\n                    \"id\": 1,\r\n                    \"topic\": \"REST APIs\",\r\n                    \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n                    \"duration\": 2\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/convenors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"convenors"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST /api/convenors (409)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"name\": \"James Hoey\",\r\n    \"position\": \"PROFESSOR\",\r\n    \"modules\": [\r\n        {\r\n            \"code\": \"CO2103\",\r\n            \"title\": \"Software Architecture\",\r\n            \"level\": 2,\r\n            \"optional\": false,\r\n            \"sessions\": [\r\n                {\r\n                    \"id\": 1,\r\n                    \"topic\": \"REST APIs\",\r\n                    \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n                    \"duration\": 2\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/convenors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"convenors"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 01:51:10 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"A convenor with Id 3 already exists.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET /api/convenors/{id} (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/convenors/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"convenors",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /api/convenors/3 (200)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/convenors/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"convenors",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 00:48:01 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"name\": \"Jose Rojas\",\n    \"position\": \"PROFESSOR\",\n    \"modules\": [\n        {\n            \"code\": \"CO2103\",\n            \"title\": \"Software Architecture\",\n            \"level\": 2,\n            \"optional\": false,\n            \"sessions\": [\n                {\n                    \"id\": 1,\n                    \"topic\": \"REST APIs\",\n                    \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n                    \"duration\": 2\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "GET /api/convenors/{id} (404)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/convenors/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"convenors",
+						"10"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /api/convenors/10 (404)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/convenors/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"convenors",
+								"10"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 00:54:03 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Convenor with id 10 not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "PUT /api/convenors/{id} (200)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3,\r\n    \"name\": \"Roy Crole\",\r\n    \"position\": \"PROFESSOR\",\r\n    \"modules\": [\r\n        {\r\n            \"code\": \"CO2103\",\r\n            \"title\": \"Software Architecture\",\r\n            \"level\": 2,\r\n            \"optional\": false,\r\n            \"sessions\": [\r\n                {\r\n                    \"id\": 1,\r\n                    \"topic\": \"REST APIs\",\r\n                    \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n                    \"duration\": 2\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/convenors/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"convenors",
+						"3"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PUT /api/convenors/3 (200)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"name\": \"Roy Crole\",\r\n    \"position\": \"PROFESSOR\",\r\n    \"modules\": [\r\n        {\r\n            \"code\": \"CO2103\",\r\n            \"title\": \"Software Architecture\",\r\n            \"level\": 2,\r\n            \"optional\": false,\r\n            \"sessions\": [\r\n                {\r\n                    \"id\": 1,\r\n                    \"topic\": \"REST APIs\",\r\n                    \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n                    \"duration\": 2\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/convenors/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"convenors",
+								"3"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 00:51:27 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"name\": \"Roy Crole\",\n    \"position\": \"PROFESSOR\",\n    \"modules\": [\n        {\n            \"code\": \"CO2103\",\n            \"title\": \"Software Architecture\",\n            \"level\": 2,\n            \"optional\": false,\n            \"sessions\": [\n                {\n                    \"id\": 1,\n                    \"topic\": \"REST APIs\",\n                    \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n                    \"duration\": 2\n                }\n            ]\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "PUT /api/convenors/{id} (404)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 8,\r\n    \"name\": \"Roy Crole\",\r\n    \"position\": \"PROFESSOR\",\r\n    \"modules\": [\r\n        {\r\n            \"code\": \"CO2103\",\r\n            \"title\": \"Software Architecture\",\r\n            \"level\": 2,\r\n            \"optional\": false,\r\n            \"sessions\": [\r\n                {\r\n                    \"id\": 1,\r\n                    \"topic\": \"REST APIs\",\r\n                    \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n                    \"duration\": 2\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/convenors/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"convenors",
+						"8"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PUT /api/convenors/8 (404)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 8,\r\n    \"name\": \"Roy Crole\",\r\n    \"position\": \"PROFESSOR\",\r\n    \"modules\": [\r\n        {\r\n            \"code\": \"CO2103\",\r\n            \"title\": \"Software Architecture\",\r\n            \"level\": 2,\r\n            \"optional\": false,\r\n            \"sessions\": [\r\n                {\r\n                    \"id\": 1,\r\n                    \"topic\": \"REST APIs\",\r\n                    \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n                    \"duration\": 2\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/convenors/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"convenors",
+								"8"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 01:14:11 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Convenor with id 8 not found.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "DELETE /api/convenors/{id} (200)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/convenors/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"convenors",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /api/convenors/5 (200)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/convenors/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"convenors",
+								"5"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 May 2022 18:21:16 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Convenor deleted successfully."
+				}
+			]
+		},
+		{
+			"name": "DELETE /api/convenors/{id} (404)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/convenors/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"convenors",
+						"10"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /api/convenors/10 (404)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/convenors/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"convenors",
+								"10"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 May 2022 18:29:03 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Convenor with id 10 not found.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET /api/convenors/{id}/modules (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/convenors/3/modules",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"convenors",
+						"3",
+						"modules"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /api/convenors/3/modules (200)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/convenors/3/modules",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"convenors",
+								"3",
+								"modules"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 13:19:38 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"code\": \"CO2103\",\n        \"title\": \"Software Architecture\",\n        \"level\": 2,\n        \"optional\": false,\n        \"sessions\": [\n            {\n                \"id\": 1,\n                \"topic\": \"REST APIs\",\n                \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n                \"duration\": 2\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET /api/convenors/{id}/modules (404)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/convenors/9/modules",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"convenors",
+						"9",
+						"modules"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /api/convenors/9/modules (404)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/convenors/9/modules",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"convenors",
+								"9",
+								"modules"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 13:48:37 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Convenor with id 9 not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET /api/modules (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/modules",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /api/modules (200)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/modules",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 01:15:50 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"code\": \"CO2103\",\n        \"title\": \"Software Architecture\",\n        \"level\": 2,\n        \"optional\": false,\n        \"sessions\": [\n            {\n                \"id\": 1,\n                \"topic\": \"REST APIs\",\n                \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n                \"duration\": 2\n            }\n        ]\n    },\n    {\n        \"code\": \"CO3095\",\n        \"title\": \"Software Quality\",\n        \"level\": 3,\n        \"optional\": true,\n        \"sessions\": [\n            {\n                \"id\": 2,\n                \"topic\": \"Unit Testing\",\n                \"datetime\": \"2022-02-28T14:00:00.000+00:00\",\n                \"duration\": 2\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET /api/modules (404)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/moduless",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"moduless"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /api/moduless (404)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/moduless",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"moduless"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 01:22:15 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2022-05-05T01:22:15.386+00:00\",\n    \"status\": 404,\n    \"error\": \"Not Found\",\n    \"message\": \"No message available\",\n    \"path\": \"/api/moduless\"\n}"
+				}
+			]
+		},
+		{
+			"name": "POST /api/modules (201)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"CO2205\",\r\n    \"title\": \"Artificial Intelligence\",\r\n    \"level\": 2,\r\n    \"optional\": false,\r\n    \"sessions\": [\r\n        {\r\n            \"id\": 1,\r\n            \"topic\": \"REST APIs\",\r\n            \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n            \"duration\": 2\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/modules",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST /api/modules (201)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"CO2205\",\r\n    \"title\": \"Artificial Intelligence\",\r\n    \"level\": 2,\r\n    \"optional\": false,\r\n    \"sessions\": [\r\n        {\r\n            \"id\": 1,\r\n            \"topic\": \"REST APIs\",\r\n            \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n            \"duration\": 2\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/modules",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Location",
+							"value": "http://localhost:8080/api/modules/Artificial%20Intelligence"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 01:58:11 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "A new module has been created"
+				}
+			]
+		},
+		{
+			"name": "POST /api/modules (409)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"CO2103\",\r\n    \"title\": \"Artificial Intelligence\",\r\n    \"level\": 2,\r\n    \"optional\": false,\r\n    \"sessions\": [\r\n        {\r\n            \"id\": 1,\r\n            \"topic\": \"REST APIs\",\r\n            \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n            \"duration\": 2\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/modules",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST /api/modules (409)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"CO2103\",\r\n    \"title\": \"Artificial Intelligence\",\r\n    \"level\": 2,\r\n    \"optional\": false,\r\n    \"sessions\": [\r\n        {\r\n            \"id\": 1,\r\n            \"topic\": \"REST APIs\",\r\n            \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n            \"duration\": 2\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/modules",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 01:59:40 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"A module code CO2103 already exists.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET /api/modules/{code} (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/modules/CO2103",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules",
+						"CO2103"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /api/modules/CO2103 (200)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/modules/CO2103",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules",
+								"CO2103"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 01:24:27 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": \"CO2103\",\n    \"title\": \"Software Architecture\",\n    \"level\": 2,\n    \"optional\": false,\n    \"sessions\": [\n        {\n            \"id\": 1,\n            \"topic\": \"REST APIs\",\n            \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n            \"duration\": 2\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "GET /api/modules/{code} (404)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/modules/CO2204",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules",
+						"CO2204"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /api/modules/CO2103 (404)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/modules/CO2204",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules",
+								"CO2204"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 01:25:27 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Module with code CO2204 not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "PATCH /api/modules/{code} (200)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"CO2103\",\r\n    \"title\": \"Software Engineering\",\r\n    \"level\": 2,\r\n    \"optional\": false,\r\n    \"sessions\": [\r\n        {\r\n            \"id\": 1,\r\n            \"topic\": \"REST APIs\",\r\n            \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n            \"duration\": 2\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/modules/CO2103",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules",
+						"CO2103"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PATCH /api/modules/{code} (200)",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"CO2103\",\r\n    \"title\": \"Software Engineering\",\r\n    \"level\": 2,\r\n    \"optional\": false,\r\n    \"sessions\": [\r\n        {\r\n            \"id\": 1,\r\n            \"topic\": \"REST APIs\",\r\n            \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n            \"duration\": 2\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/modules/CO2103",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules",
+								"CO2103"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 01:34:11 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"code\": \"CO2103\",\n    \"title\": \"Software Engineering\",\n    \"level\": 2,\n    \"optional\": false,\n    \"sessions\": [\n        {\n            \"id\": 1,\n            \"topic\": \"REST APIs\",\n            \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n            \"duration\": 2\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "PATCH /api/modules/{code} (404)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"code\": \"CO2204\",\r\n    \"title\": \"Software Engineering\",\r\n    \"level\": 2,\r\n    \"optional\": false,\r\n    \"sessions\": [\r\n        {\r\n            \"id\": 1,\r\n            \"topic\": \"REST APIs\",\r\n            \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n            \"duration\": 2\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/modules/CO2204",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules",
+						"CO2204"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PATCH /api/modules/CO2204 (404)",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"code\": \"CO2204\",\r\n    \"title\": \"Software Engineering\",\r\n    \"level\": 2,\r\n    \"optional\": false,\r\n    \"sessions\": [\r\n        {\r\n            \"id\": 1,\r\n            \"topic\": \"REST APIs\",\r\n            \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n            \"duration\": 2\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/modules/CO2204",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules",
+								"CO2204"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 01:39:00 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Module with code CO2204 not found.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "DELETE /api/modules/{code} (200)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/modules/CO2205",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules",
+						"CO2205"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /api/modules/CO2205 (200)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/modules/CO2205",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules",
+								"CO2205"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 May 2022 18:25:22 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Module deleted successfully."
+				}
+			]
+		},
+		{
+			"name": "DELETE /api/modules/{code} (404)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/modules/CO2105",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules",
+						"CO2105"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /api/modules/CO2105 (404)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/modules/CO2105",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules",
+								"CO2105"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 May 2022 18:26:57 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Module with code CO2105 not found.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET /api/modules/{code}/sessions (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/modules/CO2103/sessions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules",
+						"CO2103",
+						"sessions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /api/modules/CO2103/sessions (200)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/modules/CO2103/sessions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules",
+								"CO2103",
+								"sessions"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 13:52:58 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"topic\": \"REST APIs\",\n        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n        \"duration\": 2\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET /api/modules/{code}/sessions (404)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/modules/CO2206/sessions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules",
+						"CO2206",
+						"sessions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /api/modules/CO2206/sessions (404)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/modules/CO2206/sessions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules",
+								"CO2206",
+								"sessions"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 13:53:44 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Module with code CO2206 not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "POST /api/modules/{code}/sessions (201)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"topic\": \"JPAs\",\r\n        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n        \"duration\": 2\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/modules/CO2103/sessions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules",
+						"CO2103",
+						"sessions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST /api/modules/CO2103/sessions (201)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"topic\": \"JPAs\",\r\n        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n        \"duration\": 2\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/modules/CO2103/sessions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules",
+								"CO2103",
+								"sessions"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "45"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 May 2022 15:34:56 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "A new session in this module has been created"
+				}
+			]
+		},
+		{
+			"name": "POST /api/modules/{code}/sessions (404)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"topic\": \"JPAs\",\r\n        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n        \"duration\": 2\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/modules/CO2114/sessions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules",
+						"CO2114",
+						"sessions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "POST /api/modules/CO2114/sessions (404)",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"topic\": \"JPAs\",\r\n        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n        \"duration\": 2\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/modules/CO2114/sessions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules",
+								"CO2114",
+								"sessions"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 May 2022 18:52:43 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"The module code CO2114 not found.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET /api/modules/{code}/sessions/{id} (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/modules/CO2103/sessions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules",
+						"CO2103",
+						"sessions",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /api/modules/CO2103/sessions/1 (200)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/modules/CO2103/sessions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules",
+								"CO2103",
+								"sessions",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 May 2022 15:05:15 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"topic\": \"REST APIs\",\n    \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n    \"duration\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "GET /api/modules/{code}/sessions/{id} (404)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/modules/CO2103/sessions/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules",
+						"CO2103",
+						"sessions",
+						"5"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /api/modules/CO2103/sessions/5 (404)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/modules/CO2103/sessions/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules",
+								"CO2103",
+								"sessions",
+								"5"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 May 2022 15:08:22 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Session with id 5 not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "PUT /api/modules/{code}/sessions/{id} (200)",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"topic\": \"JPAs\",\r\n        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n        \"duration\": 2\r\n    }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/modules/CO2103/sessions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules",
+						"CO2103",
+						"sessions",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PUT /api/modules/CO2103/sessions/1 (200)",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"topic\": \"JPAs\",\r\n        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n        \"duration\": 2\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/modules/CO2103/sessions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules",
+								"CO2103",
+								"sessions",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 May 2022 16:23:10 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"topic\": \"JPAs\",\n    \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n    \"duration\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "PUT /api/modules/{code}/sessions/{id} (404",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"topic\": \"JPAs\",\r\n        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n        \"duration\": 2\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/modules/CO2208/sessions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules",
+						"CO2208",
+						"sessions",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PUT /api/modules/CO2208/sessions/1 (404",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"topic\": \"JPAs\",\r\n        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n        \"duration\": 2\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/modules/CO2208/sessions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules",
+								"CO2208",
+								"sessions",
+								"1"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 May 2022 16:34:35 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Module with code CO2208 not found.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "PATCH /api/modules/{code}/sessions/{id} (200)",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"topic\": \"JPAs\",\r\n        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n        \"duration\": 2\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/modules/CO2103/sessions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules",
+						"CO2103",
+						"sessions",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PATCH /api/modules/CO2103/sessions/1 (200)",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"topic\": \"JPAs\",\r\n        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n        \"duration\": 2\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/modules/CO2103/sessions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules",
+								"CO2103",
+								"sessions",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 May 2022 16:31:20 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"topic\": \"JPAs\",\n    \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n    \"duration\": 2\n}"
+				}
+			]
+		},
+		{
+			"name": "PATCH /api/modules/{code}/sessions/{id} 404",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n        \"topic\": \"JPAs\",\r\n        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n        \"duration\": 2\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/modules/CO2103/sessions/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules",
+						"CO2103",
+						"sessions",
+						"6"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "PATCH /api/modules/CO2103/sessions/6 404",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"topic\": \"JPAs\",\r\n        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\r\n        \"duration\": 2\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/modules/CO2103/sessions/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules",
+								"CO2103",
+								"sessions",
+								"6"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 May 2022 16:36:00 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Session with id 6 not found.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "DELETE /api/modules/{code}/sessions/{id} (200)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/modules/CO2103/sessions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules",
+						"CO2103",
+						"sessions",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /api/modules/CO2103/sessions/1 (200)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/modules/CO2103/sessions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules",
+								"CO2103",
+								"sessions",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 07 May 2022 13:09:49 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "Session deleted successfully."
+				}
+			]
+		},
+		{
+			"name": "DELETE /api/modules/{code}/sessions/{id} (404)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/modules/CO2303/sessions/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"modules",
+						"CO2303",
+						"sessions",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /api/modules/CO2303/sessions/1 (404)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/modules/CO2303/sessions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"modules",
+								"CO2303",
+								"sessions",
+								"1"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 07 May 2022 13:12:11 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Module with code CO2303 not found.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "DELETE /api/sessions (200)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/sessions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sessions"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /api/sessions (200)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/sessions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sessions"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "30"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 15:57:02 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "All sessions have been deleted"
+				}
+			]
+		},
+		{
+			"name": "DELETE /api/sessions (404)",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/sessionss",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sessionss"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "DELETE /api/sessionss (404)",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/sessionss",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sessionss"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 05 May 2022 15:58:06 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"timestamp\": \"2022-05-05T15:58:06.433+00:00\",\n    \"status\": 404,\n    \"error\": \"Not Found\",\n    \"message\": \"No message available\",\n    \"path\": \"/api/sessionss\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET /api/sessions?convenor={id}&module={code} (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/sessions?convenor=3&module=CO2103",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sessions"
+					],
+					"query": [
+						{
+							"key": "convenor",
+							"value": "3"
+						},
+						{
+							"key": "module",
+							"value": "CO2103"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /api/sessions?convenor=3&module=CO2103 (200)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/sessions?convenor=3&module=CO2103",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sessions"
+							],
+							"query": [
+								{
+									"key": "convenor",
+									"value": "3"
+								},
+								{
+									"key": "module",
+									"value": "CO2103"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 May 2022 17:12:00 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"topic\": \"REST APIs\",\n        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n        \"duration\": 2\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET /api/sessions?convenor={id}&module={code} (404)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/sessions?convenor=7&module=CO2103",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sessions"
+					],
+					"query": [
+						{
+							"key": "convenor",
+							"value": "7"
+						},
+						{
+							"key": "module",
+							"value": "CO2103"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /api/sessions?convenor=3&module=CO2103 (404)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/sessions?convenor=7&module=CO2103",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sessions"
+							],
+							"query": [
+								{
+									"key": "convenor",
+									"value": "7"
+								},
+								{
+									"key": "module",
+									"value": "CO2103"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 May 2022 17:20:20 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Convenor with id 7 not found.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET /api/sessions?convenor={id} (200)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/sessions?convenor=4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sessions"
+					],
+					"query": [
+						{
+							"key": "convenor",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /api/sessions?convenor=4 (200)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/sessions?convenor=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sessions"
+							],
+							"query": [
+								{
+									"key": "convenor",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 May 2022 17:19:06 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 1,\n        \"topic\": \"REST APIs\",\n        \"datetime\": \"2022-02-25T12:00:00.000+00:00\",\n        \"duration\": 2\n    },\n    {\n        \"id\": 2,\n        \"topic\": \"Unit Testing\",\n        \"datetime\": \"2022-02-28T14:00:00.000+00:00\",\n        \"duration\": 2\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET /api/sessions?convenor={id} (404)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/sessions?convenor=8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sessions"
+					],
+					"query": [
+						{
+							"key": "convenor",
+							"value": "8"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "GET /api/sessions?convenor=8 (404)",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/sessions?convenor=8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sessions"
+							],
+							"query": [
+								{
+									"key": "convenor",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 06 May 2022 17:21:37 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Convenor with id 8 not found.\"\n}"
+				}
+			]
+		}
+	]
+}

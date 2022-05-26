@@ -1,0 +1,884 @@
+openapi: 3.0.1
+components:
+  schemas:
+    ErrorInfo:
+      type: object
+      properties:
+        message:
+          type: string
+          default: Error message
+    ConvenorID:
+      type: object
+      properties:
+        name:
+          type: string
+        position:
+          type: string
+    Convenor:
+      type: object
+      properties:
+        id:
+          type: number
+        name:
+          type: string
+        position:
+          type: string
+          enum:
+            - GTA
+            - Lecturer
+            - Professor
+    ArrayOfConvenors:
+      type: array
+      items:
+        $ref: "#/components/schemas/Convenor"
+    Session:
+      type: object
+      properties:
+        id:
+          type: integer
+        topic:
+          type: string
+        datetime:
+          $ref: '#/components/schemas/Datetime'
+        duration:
+          type: integer
+    ArrayOfSessions:
+      type: array
+      items:
+        $ref: '#/components/schemas/Session'
+    Datetime:
+      type: object
+      properties:
+        yr:
+          type: integer
+        month:
+          type: integer
+        day:
+          type: integer
+        hour:
+          type: integer
+    Module:
+      type: object
+      properties:
+        code:
+          type: string
+        title:
+          type: string
+        level:
+          type: integer
+        optional:
+          type: boolean
+    ArrayOfModules:
+      type: array
+      items:
+        $ref: '#/components/schemas/Module'
+
+info:
+  title: "CW2 Assignment, Part 1"
+  description: "API Description for Part 1"
+  version: 1.0.0
+servers:
+ - url: "http://localhost:8080/"
+tags:
+- name: "convenors"
+  description: "Anything containing Convenors"
+- name: "modules"
+  description: "Anything containing  Modules"
+- name: "sessions"
+  description: "A list of all module sessions"
+paths:
+  /convenors:
+    get:
+      tags:
+      - "convenors"
+      summary:  "outputs a list of all convenors"
+      description: "Function to output a list of all current Module Convenors"
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ArrayOfConvenors"
+              examples:
+                default:
+                  summary: Default response
+                  value:
+                    - id: 11
+                      name: Kehinde Aruleba
+                      position: Lecturer
+                    - id: 12
+                      name: Richard Craggs
+                      position: Professor
+        "404":
+          description: "No Convenor List exists"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorInfo"
+              examples:
+                default:
+                  summary: Empty response for array
+                  value:
+                    message: "No convenors found"
+                    
+                    
+    post:
+      tags:
+      - "convenors"
+      summary: "Add a new Convenor"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConvenorID'
+            examples:
+              nominal:
+                summary: Default
+                value:
+                  name: "Genovefa Kefalidou"
+                  position: "Lecturer"
+      responses:
+        "201":
+          description: "Convenor successfully added"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Convenor'
+              examples:
+                nominal:
+                  summary: "New Convenor has been added"
+                  value:
+                    id: 13
+                    name: "Genovefa Kefalidou"
+                    position: "Lecturer"
+        "400":
+          description: "Error occured and convenor could not be made"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              examples:
+                failure:
+                  summary: Error message is returned
+                  value:
+                    message: "Error adding a new convenor"
+  /convenors/{id}:
+    get:
+      tags: 
+      - "convenors"
+      summary: "return specific convenor by ID"
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          description: "The ID of a specific Convenor"
+          required: true
+      responses:
+        "200":
+          description: OK response
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Convenor"
+              examples:
+                default:
+                  summary: "Retrieves the specified Convenor"
+                  value:
+                    id: 13
+                    name: "Genovefa Kefalidou"
+                    position: "Lecturer"
+        "404":
+          description: "Convenor with such ID does not exist"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorInfo"
+              examples:
+                doesnotexist:
+                  summary: Non-existing convenor
+                  value:
+                    message: "Convenor Does not exist"
+    put:
+      tags:
+      - "convenors"
+      summary: "Update a Convenor"
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          description: "The ID of a specific convenor"
+          required: true
+      requestBody:
+        description: "Replace current data with new data"
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Convenor'
+            examples:
+              nominal:
+                summary: Default
+                value:
+                  id: 13
+                  name: "Roy Crole"
+                  position: "Lecturer"
+      responses:
+        "200":
+          description: Convenor updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Convenor'
+              examples:
+                success:
+                  summary: Updated convenor
+                  value:
+                    id: 13
+                    name: "Roy Crole"
+                    position: "Lecturer"
+        "400":
+          description: "Incorrect Data inputted"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              examples:
+                failure:
+                  summary: Update failed
+                  value:
+                    message: "Incorrect data inputted"
+          
+          
+        
+    delete:
+      tags:
+      - "convenors"
+      summary: "Delete a specific Convenor using their Convenor ID"
+      parameters:
+        - in: "path"
+          name: id
+          schema:
+            type: integer
+          required: true
+      responses:
+        "200":
+          description: "Delete successful"
+        "400":
+          description: "Wrong convenor ID input"
+        "404":
+          description: "Convenor does not exist"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              examples:
+                failure:
+                  summary: Wrong ID
+                  value:
+                    message: "Convenor not found"
+  /convenors/{id}/modules:
+    get:
+      tags:
+      - "convenors"
+      summary: "Find all modules a specific convenor is teaching using their convenor id"
+      parameters:
+        - name: id
+          in: "path"
+          description: "The ID of a specific convenor"
+          schema:
+            type: integer
+          required: true
+      responses:
+        "200":
+          description: "Successful fetch operation"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArrayOfModules'
+              examples:
+                default:
+                  value:
+                    - code: "CO2104"
+                      title: "User Interface Design and Evaluation"
+                      level: 1
+                      optional: false
+                    - code: "CO2106"
+                      title: "Data Analytics"
+                      level: 1
+                      optional: false
+        "404":
+          description: "Convenor not found"
+          content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/ErrorInfo'
+              examples:
+                failure:
+                  summary: Invalid ID
+                  value:
+                    message: "Convenor with such ID does not exist"
+  /modules:
+    get:
+      tags:
+      - "modules"
+      summary:  "Outputs a list of all modules"
+      description: "Function to output a list of all current Modules"
+      responses:
+        "200":
+          description: "successful operation"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArrayOfModules'
+              examples:
+                default:
+                  summary: Default example
+                  value:
+                    - code: "CO2104"
+                      title: "User Interface Design and Evaluation"
+                      level: 2
+                      optional: false
+                    - code: "CO2106"
+                      title: "Data Analytics"
+                      level: 2
+                      optional: true
+        '404':
+          description: "No module list exists"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              examples:
+                failure:
+                  summary: No modules
+                  value:
+                    message: "No modules found"
+    post:
+      tags:
+      - "modules"
+      requestBody:
+        description: "Create a new module"
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Module'
+            examples:
+              nominal:
+                summary: Default
+                value:
+                  code: "CO2201"
+                  title: "Software Engineering Project"
+                  level: 2
+                  optional: false
+      responses:
+        "200":
+          description: "Success message when module is created"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Module'
+              examples:
+                default:
+                  value:
+                    code: "CO2201"
+                    title: "Software Engineering Project"
+                    level: 2
+                    optional: false
+        '400':
+          description: "Error occured and convenor could not be made"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              examples:
+                failure:
+                  summary: Error message is returned
+                  value:
+                    message: "Error adding a new module"  
+  /modules/{code}:        
+    get:
+      tags: 
+      - "modules"
+      summary: "Return specific module by code"
+      parameters:
+        - in: path
+          name: code
+          description: "The code of a specific module"
+          schema:
+            type: string
+          required: true
+      responses:
+        "200":
+          description: "successful Operation"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Module"
+              examples:
+                default:
+                  summary: Retrieve a module
+                  value:
+                    code: "CO2201"
+                    title: "Software Engineering Project"
+                    level: 2
+                    optional: false
+        "404":
+          description: "Module not found"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorInfo"
+              examples:
+                doesnotexist:
+                  summary: Non-existing module
+                  value:
+                    message: "Module does not exist"
+                    
+    patch:
+      tags:
+      - "modules"
+      summary: "Update a Module"
+      parameters:
+        - name: code
+          in: path
+          schema:
+            type: string
+          required: true
+      requestBody:
+        description: Updated module data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Module'
+            examples:
+              default:
+                summary: New module data
+                value:
+                  code: "CO2201"
+                  title: "Software Engineering Project"
+                  level: 2
+                  optional: false
+      responses:
+        "200":
+          description: "Module Update successful"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Module'
+              examples:
+                default:
+                  summary: "Return Updated Module "
+                  value:
+                    code: "CO3104"
+                    title: "Functional Programming"
+                    level: 3
+                    optional: true
+        "404":
+          description: "Module Does not exist"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              examples:
+                notfound:
+                  summary: "Invalid module code"
+                  value:
+                    message: "Module not found"
+    delete:
+      tags:
+      - "modules"
+      summary: "Delete a specific Module using their module code"
+      parameters:
+        - in: path
+          name: code
+          schema:
+            type: string
+          required: true
+      responses:
+        "200":
+          description: "Delete successful"
+        "400":
+          description: "Wrong module code input"
+        "404":
+          description: "Module does not exist"
+  /modules/{code}/sessions:
+    get:
+      tags:
+      - "modules"
+      summary: "Get all available Sessions of a module using Module Code"
+      description: ""
+      parameters:
+        - in: path
+          name: code
+          schema:
+            type: string
+          required: true
+      responses:
+        "200":
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArrayOfSessions'
+              examples:
+                default:
+                  value:
+                    - id: 4001
+                      topic: "Software Engineering Project"
+                      datetime: 
+                        yr: 2022
+                        month: 5
+                        day: 15
+                        hour: 13
+                      duration: 2
+                    - id: 1299
+                      topic: "Data Analytics"
+                      datetime:
+                        yr: 2022
+                        month: 1
+                        day: 23
+                        hour: 15
+                      duration: 1
+        "404":
+          description: No such session
+          content:
+            application/json:
+              schema:
+               $ref: '#/components/schemas/ErrorInfo'
+              examples:
+                failure:
+                  summary: Invalid ID
+                  value:
+                    message: "Session with such ID does not exist"
+    post:
+      tags:
+      - "modules"
+      summary: "Add a new session for Module"
+      parameters:
+      - in: path
+        name: code
+        schema:
+          type: string
+        required: true
+      requestBody:
+        description: "add a new session for a Module"
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Session'
+            examples:
+              nominal:
+                value:
+                  id: 55523
+                  topic: "Introduction to web programming"
+                  datetime: 
+                    yr: 2022
+                    month: 2
+                    day: 26
+                    hour: 11
+                  duration: 3
+      responses:
+        "200":
+          description: "Session Added Successfully"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+              examples:
+                nominal:
+                  summary: Created successfully
+                  value:
+                    id: 42321
+                    topic: high fidelity prototypes
+                    datetime: 
+                      yr: 2022
+                      month: 10
+                      day: 16
+                      hour: 12
+                    duration: 4
+        "404":
+          description: "Module does not exist"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              examples:
+                notfound:
+                  summary: Invalid module code
+                  value:
+                    message: "Module not found"
+                    
+  /modules/{code}/sessions/{id}: 
+    get:
+      tags:
+        - "modules"
+      summary: "Get 1 session from a specific module"
+      parameters:
+        - in: path
+          name: code
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      responses:
+        '200':
+          description: "Session retrieved successfully"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+              examples:
+                nominal:
+                  value:
+                    id: 80001
+                    topic: "JPAs 101"
+                    datetime: 
+                      yr: 2023
+                      month: 03
+                      day: 01
+                      hour: 5
+                    duration: 1
+        "404":
+          description: "Session not found"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              examples:
+                nominal:
+                  value:
+                    message: "Session not found"
+    put:
+      summary: "Update 1 session from a specific module"
+      tags:
+        - "modules"
+      parameters:
+        - in: path
+          name: code
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      requestBody:
+        description: Updated session data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Session'
+            examples:
+              nominal: 
+                value:
+                  id: 83421
+                  topic: "JPA advanced" 
+                  datetime:
+                      yr: 2022
+                      month: 12
+                      day: 20
+                      hour: 10
+                  duration: 2s
+      responses:
+        "200":
+          description: "Session updated successfully"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+              examples:
+                success:
+                  value:
+                    id: 80001
+                    topic: "JPAs 101"
+                    datetime: 
+                      yr: 2023
+                      month: 03
+                      day: 01
+                      hour: 5
+                    duration: 1
+        '400':
+          description: Invalid data submitted
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              examples:
+                failure:
+                  summary: Update failed
+                  value:
+                    message: Invalid data submitted
+    patch:
+      summary: "Update a specific session from a module"
+      tags:
+        - modules
+      parameters: 
+        - in: path
+          name: code
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      requestBody:
+        description: Partial or complete session data
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Session'
+            examples:
+              nominal:
+                summary: Partial or complete session data
+                value:
+                  topic: Low fidelity prototypes revisited
+                  duration: 1
+      responses:
+        "200":
+          description: "Session updated successfully"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Session'
+              examples:
+                default:
+                  value:
+                    id: 95493
+                    datetime: 
+                      yr: 2021
+                      month: 11
+                      day: 05
+                      hour: 29
+                    duration: 3
+        "404":
+          description: "Session does not exist"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              examples:
+                notfound:
+                  value:
+                    message: "Session not found"
+    delete:
+      summary: "Deletes a specific session'
+      tags:
+        - "modules"
+      parameters:
+        - in: path
+          name: code
+          schema:
+            type: string
+          required: true
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+      responses:
+        '204':
+          description: "Session deleted successfully"
+        '404':
+          description: "Session does not exist"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              examples:
+                failure:
+                  value:
+                    message: "Session does not exist"
+  /sessions:  
+    delete:
+      tags:
+        - "sessions"
+      summary: "Delete every session"
+      responses:
+        "200":
+          description: "Sessions deleted Successfully"
+        "400":
+          description: "Session does not exist"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              examples:
+                failure:
+                  value:
+                    message: "Sessions do not exist"
+    get:
+      summary: "Returns all sessions filtered by module and/or convenor"
+      tags:
+        - "sessions"
+      parameters:
+        - in: query
+          name: Convenor
+          schema:
+            type: string
+          required: false
+        - in: query
+          name: Module
+          schema:
+            type: string
+          required: false
+      responses:
+        '200':
+          description: Retrieved sessions successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ArrayOfSessions'
+              examples:
+                success:
+                  summary: Default
+                  value:
+                    - id: 13338
+                      topic: "MySQL"
+                      datetime:
+                        yr: 2021
+                        month: 2
+                        day: 3
+                        hour: 4
+                      duration: 1
+		       id: 80001
+		       topic: "JPAs 101"
+		       datetime: 
+		       yr: 2023
+		       month: 03
+		       day: 01
+		       hour: 5
+		      duration: 1
+        "404":
+          description: "Session does not exist"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorInfo'
+              examples:
+                failure:
+                  value:
+                    message: "Session not exist"
+    
+
+        
+      
+      
+    
+      
+    
